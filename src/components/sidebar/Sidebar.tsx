@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { IoFootball, IoLogoReact } from "react-icons/io5";
+import { IoFootball, IoLogoReact, IoStar } from "react-icons/io5";
 import { IoBrowsersOutline, IoCalculator } from "react-icons/io5";
 import SidebarMenuItem from './SidebarMenuItem';
 
@@ -21,6 +21,12 @@ const menuItems = [
         icon: <IoFootball size={30} />,
         title: 'Pokemon',
         subtitle: 'Static pokemon page'
+    },
+    {
+        path: '/dashboard/favorites',
+        icon: <IoStar size={30} />,
+        title: 'Favorites',
+        subtitle: 'Favorite pokemon'
     },
 ]
 
@@ -55,7 +61,7 @@ export default function Sidebar() {
                     <nav>
                         {
                             menuItems.map(item => (
-                                <SidebarMenuItem key={item.path} { ...item } />
+                                <SidebarMenuItem key={item.path} {...item} />
                             ))
                         }
                     </nav>

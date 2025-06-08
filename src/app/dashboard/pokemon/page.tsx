@@ -2,6 +2,10 @@ import Image from 'next/image'
 import { PokemonGrid, PokemonResponse, SimplePokemon } from "@/pokemon";
 
 
+export const metadata = {
+  title: 'Pokemons',
+  description: 'Pokemons list page'
+}
 
 
 const getPokemonData = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => {
@@ -23,7 +27,7 @@ const getPokemonData = async (limit = 20, offset = 0): Promise<SimplePokemon[]> 
 
 export default async function PokemonPage() {
 
-  const pokemonData = await getPokemonData(151);
+  const pokemonData = await getPokemonData(20);
 
   return (
     <div className="flex flex-col">

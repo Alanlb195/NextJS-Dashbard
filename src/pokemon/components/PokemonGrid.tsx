@@ -1,5 +1,5 @@
 import React from 'react'
-import { SimplePokemon } from '../interfaces/simple-pokemon'
+import { SimplePokemon } from '../interfaces/simple.pokemon'
 import { PokemonCard } from './PokemonCard';
 
 

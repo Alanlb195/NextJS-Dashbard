@@ -1,3 +1,4 @@
+import { PokemonDetail } from "@/pokemon/interfaces/pokemon-details.reponse";
 import { Metadata } from "next";
 import { redirect } from "next/dist/server/api-utils";
 import Image from "next/image";
@@ -26,8 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 
-const getPokemon = async (id: string) => {
+export async function generateStaticParams() {
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=25');
+    const data = await res.json();
 
+    return data.results.map((pokemon: any, index: number) => ({
+        id: (index + 1).toString()
+    }));
+}
+
+
+
+const getPokemon = async (id: string): Promise<PokemonDetail> => {
     try {
         const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
             cache: 'force-cache', // TODO: change in future,
@@ -42,7 +53,6 @@ const getPokemon = async (id: string) => {
     } catch (error) {
         notFound();
     }
-
 }
 
 

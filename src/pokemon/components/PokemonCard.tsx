@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { SimplePokemon } from "../interfaces/simple-pokemon"
+import { SimplePokemon } from "../interfaces/simple.pokemon"
 import { IoHeartOutline } from 'react-icons/io5';
 import Link from 'next/link';
 
