@@ -1,5 +1,6 @@
-export type { PokemonResponse } from './interfaces/pokemon.response';
-export type { SimplePokemon } from './interfaces/simple.pokemon';
-
-
-export { PokemonGrid } from './components/PokemonGrid';
+export * from './components/FavoritePokemons';
+export * from './components/PokemonCard';
+export * from './components/PokemonGrid';
+export * from './interfaces/pokemon-details.reponse';
+export * from './interfaces/pokemon.response';
+export * from './interfaces/simple.pokemon';
